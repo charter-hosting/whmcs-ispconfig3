@@ -37,4 +37,109 @@ function ispconfig3_ConfigOptions() {
 
 }
 
+function ispconfig3_CreateAccount($params) {
+
+    /* The variables listed below are passed into all module functions */
+
+    $serviceid = $params["serviceid"]; // Unique ID of the product/service in the WHMCS Database
+    $pid = $params["pid"]; // Product/Service ID
+    $producttype = $params["producttype"]; // Product Type: hostingaccount, reselleraccount, server or other
+    $domain = $params["domain"];
+	$username = $params["username"];
+	$password = $params["password"];
+    $clientsdetails = $params["clientsdetails"]; // Array of clients details - firstname, lastname, email, country, etc...
+    $customfields = $params["customfields"]; // Array of custom field values for the product
+    $configoptions = $params["configoptions"]; // Array of configurable option values for the product
+
+    /* Product module option settings from ConfigOptions array above */
+    $configoption1 = $params["configoption1"];
+    $configoption2 = $params["configoption2"];
+    $configoption3 = $params["configoption3"];
+    $configoption4 = $params["configoption4"];
+
+    /* Additional variables if the product/service is linked to a server */
+    $server = $params["server"]; // True if linked to a server
+    $serverid = $params["serverid"];
+    $serverip = $params["serverip"];
+    $serverusername = $params["serverusername"];
+    $serverpassword = $params["serverpassword"];
+    $serveraccesshash = $params["serveraccesshash"];
+    $serversecure = $params["serversecure"]; // If set, SSL Mode is enabled in the server config
+
+	/* Code to perform action goes here... */
+
+	if ($successful) {
+		$result = "success";
+	} else {
+		$result = "Error Message Goes Here...";
+	}
+	return $result;
+
+}
+
+function ispconfig3_TerminateAccount($params) {
+
+	/* Code to perform action goes here... */
+
+    if ($successful) {
+		$result = "success";
+	} else {
+		$result = "Error Message Goes Here...";
+	}
+	return $result;
+
+}
+
+function ispconfig3_SuspendAccount($params) {
+
+	/* Code to perform action goes here... */
+
+    if ($successful) {
+		$result = "success";
+	} else {
+		$result = "Error Message Goes Here...";
+	}
+	return $result;
+
+}
+
+function ispconfig3_UnsuspendAccount($params) {
+
+	/* Code to perform action goes here... */
+
+    if ($successful) {
+		$result = "success";
+	} else {
+		$result = "Error Message Goes Here...";
+	}
+	return $result;
+
+}
+
+function ispconfig3_ChangePassword($params) {
+
+	/* Code to perform action goes here... */
+
+    if ($successful) {
+		$result = "success";
+	} else {
+		$result = "Error Message Goes Here...";
+	}
+	return $result;
+
+}
+
+function ispconfig3_ChangePackage($params) {
+
+	/* Code to perform action goes here... */
+
+    if ($successful) {
+		$result = "success";
+	} else {
+		$result = "Error Message Goes Here...";
+	}
+	return $result;
+
+}
+
 ?>
