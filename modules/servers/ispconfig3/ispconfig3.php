@@ -142,4 +142,35 @@ function ispconfig3_ChangePackage($params) {
 
 }
 
+function template_ClientArea($params) {
+
+    # Output can be returned like this, or defined via a clientarea.tpl template file (see docs for more info)
+
+	$code = '<form action="http://'.$serverip.'/controlpanel" method="post" target="_blank">
+<input type="hidden" name="user" value="'.$params["username"].'" />
+<input type="hidden" name="pass" value="'.$params["password"].'" />
+<input type="submit" value="Login to Control Panel" />
+<input type="button" value="Login to Webmail" onClick="window.open(\'http://'.$serverip.'/webmail\')" />
+</form>';
+	return $code;
+
+}
+
+function template_AdminLink($params) {
+
+	$code = '<form action=\"http://'.$params["serverip"].'/controlpanel" method="post" target="_blank">
+<input type="hidden" name="user" value="'.$params["serverusername"].'" />
+<input type="hidden" name="pass" value="'.$params["serverpassword"].'" />
+<input type="submit" value="Login to Control Panel" />
+</form>';
+	return $code;
+
+}
+
+function template_LoginLink($params) {
+
+	echo "<a href=\"http://".$params["serverip"]."/controlpanel?gotousername=".$params["username"]."\" target=\"_blank\" style=\"color:#cc0000\">login to control panel</a>";
+
+}
+
 ?>
