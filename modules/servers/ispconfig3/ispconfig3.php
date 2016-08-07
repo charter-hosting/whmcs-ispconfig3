@@ -142,7 +142,7 @@ function ispconfig3_ChangePackage($params) {
 
 }
 
-function template_ClientArea($params) {
+function ispconfig3_ClientArea($params) {
 
     # Output can be returned like this, or defined via a clientarea.tpl template file (see docs for more info)
 
@@ -156,7 +156,7 @@ function template_ClientArea($params) {
 
 }
 
-function template_AdminLink($params) {
+function ispconfig3_AdminLink($params) {
 
 	$code = '<form action=\"http://'.$params["serverip"].'/controlpanel" method="post" target="_blank">
 <input type="hidden" name="user" value="'.$params["serverusername"].'" />
@@ -167,7 +167,7 @@ function template_AdminLink($params) {
 
 }
 
-function template_LoginLink($params) {
+function ispconfig3_LoginLink($params) {
 
 	echo "<a href=\"http://".$params["serverip"]."/controlpanel?gotousername=".$params["username"]."\" target=\"_blank\" style=\"color:#cc0000\">login to control panel</a>";
 
